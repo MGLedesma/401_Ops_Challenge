@@ -6,10 +6,14 @@
 # Description of Purpose: 
 
 # Declaration of variable
-
+#now = datetime.datetime.now()
 
 # Save the output to a text file as a log of events.
 # Accept user input for target IP address.
-pingme = input("Enter IP address to ping: ")
+#pingme = input("Enter IP address to ping: ")
 
+#import datetime
+
+#def check_ping("ping Kali Linux")
+    ping('172.10.0.41', count = 1)
 

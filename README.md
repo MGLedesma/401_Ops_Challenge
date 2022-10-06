@@ -1,3 +1,5 @@
 # Table of Contents
 
-- [ops01 - Uptime Sensor Tool 1 of 2](class-01.py)
+- [OC02 - Uptime Sensor Tool 1 of 2](class02.py)
+- [OC03 - Uptime Sensor Tool 2 of 2](class03.py)
+
