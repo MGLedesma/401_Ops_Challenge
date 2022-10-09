@@ -9,7 +9,7 @@
 import os, time, datetime
 
 # Declaration of variable
-iphost = input("Enter host to ping: ")  #accept user input for target IP address.
+iphost = input("Enter host to ping: ")                  #accept user input for target IP address.
 UP = "Network Active"
 DOWN = "Network Inactive"
 
