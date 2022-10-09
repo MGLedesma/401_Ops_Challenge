@@ -10,8 +10,8 @@ import os, time, datetime
 
 # Declaration of variable
 iphost = input("Enter host to ping: ")
-UP = "Ping Successful"
-DOWN = "Ping Unsuccessful"
+UP = "Network Active"
+DOWN = "Network Inactive"
 
 # Declaration of Function
 def pingme():
