@@ -19,7 +19,7 @@ def pingme():
     now = datetime.datetime.now()
     timestamp = now.strftime('%m-%d-%Y %T %p')          #timestamp print format
 
-    response = os.system("ping -c 1 " + ip_host)         #transmit a single ICMP (ping) packet to a specific IP 
+    response = os.system("ping -c 1 " + ip_host)        #transmit a single ICMP (ping) packet to a specific IP 
     if response == 0:                                   #assign success or failure to a status variable.
         ping_result = ping_active
     else:
