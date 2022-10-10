@@ -3,7 +3,7 @@
 # Script Name:  Ops 401 Class 03 Challenge Solution
 # Author:   MaryGrace Ledesma
 # Date of Last Revision: October 05, 2022
-# Description of Purpose:   Create an uptime sensor tool that 
+# Description of Purpose:   Create an uptime sensor tool 
 
 # Import libraries
 #from ctypes.wintypes import MSG
@@ -12,7 +12,7 @@ import os, time, datetime, smtplib, ssl
 from getpass import getpass
 
 # Declaration of variable
-iphost = input("Enter host to ping: ")                  #accept user input for target IP address.
+iphost = input("Enter host to ping: ")                  
 ui_email = input("Enter destination email: ")
 ui_password = getpass()
 
@@ -30,7 +30,7 @@ def up_ealert():
     global now 
     global timestamp
 
-    server = smtplib.SMTP_SSL("smtp-relay.gmail.com", 465, context = context)
+    server = smtplib.SMTP_SSL('smtp-relay.gmail.com', 465, context = context)
     server.ehlo()
     server.login(ui_email, ui_password)
     ui_msg = "Hello! \nYour network is Active.\n %s" % timestamp
@@ -41,7 +41,7 @@ def down_ealert():
     global now
     global timestamp
 
-    server = smtplib.SMTP_SSL("smtp-relay.gmail.com", 465, context = context)
+    server = smtplib.SMTP_SSL('smtp-relay.gmail.com', 465, context = context)
     server.ehlo()
     server.login(ui_email, ui_password)
     ui_msg = "Attention!, \nYour network is Inactive.\n %s" % timestamp
@@ -62,20 +62,20 @@ def pingme():
         last = down
         down_ealert()
         
-    response = os.system("ping -c 1 " + iphost)         #transmit a single ICMP (ping) packet to a specific IP 
-    if response == 0:                                   #assign success or failure to a status variable.
+    response = os.system("ping -c 1 " + iphost)         
+    if response == 0:                                   
         ping_result = up
     else:
         ping_result = down
-    print()                                             #print empty line
-    print(timestamp + f" {iphost}: " + ping_result)     #print the status variable along with a comprehensive timestamp and destination IP tested.
+    print()                                             
+    print(timestamp + f" {iphost}: " + ping_result)     
     print()
 
 # Main
 
 while True:
     pingme()                                            
-    time.sleep(2)                                       #send packet every 2 seconds
+    time.sleep(2)                                       
      
 # End
 
