@@ -7,8 +7,7 @@
 
 # Import libraries
 #from ctypes.wintypes import MSG
-import contextvars
-import os, time, datetime, smtplib, ssl
+import os, time, datetime, smtplib
 from getpass import getpass
 
 # Declaration of variable
@@ -23,30 +22,30 @@ ping_result = 0
 
 now = datetime.datetime.now()
 timestamp = now.strftime('%m-%d-%Y %T %p')
-context = ssl.create_default_context()    
+# context = ssl.create_default_context()    
 
 # Declaration of Function
 def up_ealert():
     global now 
     global timestamp
 
-    server = smtplib.SMTP_SSL('smtp-relay.gmail.com', 465, context = context)
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
     server.login(ui_email, ui_password)
-    ui_msg = "Hello! \nYour network is Active.\n %s" % timestamp
+    ui_msg = "Hello, \nYour network is Active.\n %s" % timestamp
     server.sendmail('ping.alert@myserver.com', ui_email, ui_msg)
-    server,quit()
+    server.quit()
 
 def down_ealert():
     global now
     global timestamp
 
-    server = smtplib.SMTP_SSL('smtp-relay.gmail.com', 465, context = context)
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
     server.login(ui_email, ui_password)
     ui_msg = "Attention!, \nYour network is Inactive.\n %s" % timestamp
     server.sendmail('ping.alert@myserver.com', ui_email, ui_msg)
-    server,quit()
+    server.quit()
 
 
 def pingme():
