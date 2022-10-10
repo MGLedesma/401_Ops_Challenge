@@ -9,9 +9,9 @@
 import os, time, datetime
 
 # Declaration of variable
-iphost = input("Enter host to ping: ")                  #accept user input for target IP address.
-ping_active = "Ping Successful"
-ping_inactive = "Ping Unsuccessful"
+ip_host = input("Enter host to ping: ")                  #accept user input for target IP address.
+ping_active = "Network Active"
+ping_inactive = "Network Inactive"
 
 # Declaration of Function
 def pingme():
@@ -19,14 +19,14 @@ def pingme():
     now = datetime.datetime.now()
     timestamp = now.strftime('%m-%d-%Y %T %p')          #timestamp print format
 
-    response = os.system("ping -c 1 " + iphost)         #transmit a single ICMP (ping) packet to a specific IP 
+    response = os.system("ping -c 1 " + ip_host)         #transmit a single ICMP (ping) packet to a specific IP 
     if response == 0:                                   #assign success or failure to a status variable.
         ping_result = ping_active
     else:
         ping_result = ping_inactive
 
     print()                                             #print empty line
-    print(timestamp + f" {iphost}: " + ping_result)     #print the status variable along with a comprehensive timestamp and destination IP tested.
+    print(timestamp, ping_result, f"to {ip_host}: ")    #print the status variable along with a comprehensive timestamp and destination IP tested.
     print()
 
 # Main
