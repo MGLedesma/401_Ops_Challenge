@@ -33,9 +33,9 @@ def pingme():
 
 while True:
     pingme()                                            
-    print("Start: %s" %time.ctime())
-    time.sleep(2)                                       #send packet every 2 seconds
-    print("End: %s" %time.ctime())
+#   print("Start: %s" %time.ctime())
+    time.sleep(2)                                       #pause loop then send packet every 2 seconds
+#   print("End: %s" %time.ctime())
     
 # End
 
