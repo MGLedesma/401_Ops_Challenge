@@ -1,4 +1,4 @@
-#!/user/bin/python3 
+#!/usr/bin/python3 
 
 # Script Name:  Ops 401 Class 08 Challenge Solution
 # Author:   MaryGrace Ledesma
