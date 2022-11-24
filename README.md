@@ -5,4 +5,6 @@
 - [OC06 - File Encryption 1 of 3](class06.py)
 - [OC07 - File Encryption 2 of 3](class07.py)
 - [OC08 - File Encryption 3 of 3](class08.py)
+- [OC16 - Brute Force Attack 1 of 3](class16.py)
+- [OC17 - Brute Force Attack 2 0f 3](class17.py)
 

@@ -30,15 +30,13 @@ def pw_check():
     if password in line:
         print("Entered password is in the list")
     else:
-        print("Entered password is not on the list")
+        print("Entered password is not in the list")
 
 
 def mode_menu():
-    print()
-    print("  Mode Menu  ") 
-    print("[1] Offensive: Dictionary Iterator")
+    print(" --- Mode Menu --- ") 
+    print("[1] Offensive; Dictionary Iterator")
     print("[2] Defensive; Password Recognized")
-    print("[0] to EXIT")
     ask_user = int(input("Enter your selected mode: "))
 
     if ask_user == 1:
@@ -46,14 +44,6 @@ def mode_menu():
 
     if ask_user == 2:
         pw_check()
-
-    if ask_user == 0:
-        print("Exiting!")
-        quit
-    
-    else:
-        print("Invalid input! make a another selection: ")
-
 
 # Main
 
